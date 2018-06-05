@@ -9,20 +9,19 @@ var clearElem = document.querySelector('.clear')
 var storing = localStorage.getItem('users');
 var storedRegs = storing ? JSON.parse(storing) : {};
 
-function regCreation(takeInAValue){
-  var create = document.createElement('span')
-  create.createTextNode = takeInAValue;
-  displayElem.appendChild(create);
-
-
-}
+// function regCreation(takeInAValue){
+//   var create = document.createElement('span')
+//   create.createTextNode = takeInAValue;
+//   displayElem.appendChild(create);
 //
-// function listCReation() {
-//   var node = document.createElement("LI");
-//   var textnode = document.createTextNode(textFieldElem.value);
-//   node.appendChild(textnode);
-//   document.getElementById("displayMaaan").appendChild(node);
 // }
+
+function listCReation() {
+  var node = document.createElement("button");
+  var textnode = document.createTextNode(textFieldElem.value);
+  node.appendChild(textnode);
+  document.getElementById("displayMaaan").appendChild(node);
+}
 
 
 function displayingRegNums(){
@@ -46,8 +45,8 @@ function clearing(){
 
 
 addBtnElem.addEventListener('click', function(){
-  displayingRegNums();
-  regCreation()
+  //displayingRegNums();
+  listCReation()
 })
 
 clearElem.addEventListener('click', function(){
@@ -55,4 +54,6 @@ clearElem.addEventListener('click', function(){
     textFieldElem.value = "";
   }
   displayElem.innerHTML = '';
+  localStorage.clear();
+  location.reload()
 })

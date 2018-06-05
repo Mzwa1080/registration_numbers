@@ -1,0 +1,39 @@
+body{
+  background:  #f46445;
+}
+.head{
+  text-align: center;
+}
+.container{
+  background: white;
+  height: 1200px;
+}
+.ofdropdown{
+  text-align: center;
+}
+.ofText{
+  text-align: center;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+
+.display1{
+  background-color: yellow;
+  border-radius: 10px;
+  border: 3px solid black;
+  width: 20%;
+  text-align: center;
+}
+.ofDisplay{
+  text-align: center;
+  margin-top:10%;
+}
+.ofDisplay{
+  text-align: center;
+}

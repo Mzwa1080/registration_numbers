@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reg_Number Check</title>
+    <link rel="stylesheet" href="grid/sinple-grid.css">
+    <link rel="stylesheet" href="grid/simple-grid.min.css">
+    <link rel="stylesheet" href="reg_number.css">
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="head">Regitration numbers</h1>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-12 ofText">
+            Enter registration number:
+            <input class="textInput" type="text" name="text" value="" placeholder="eg.CA 465-647" maxlength="9" required>
+            <input class="Addbtn onclick" type="button" name="add" value="Add">
+            <input class="clear onclick" type="button" name="Clear" value="Clear">
+
+          </div>
+        </div>
+        <div class="row">
+          <span>
+            <div class="col-12 ofdropdown">
+              <div class="dropdown">
+                <h3>Select your Town</h3>
+                  <!-- <button class="dropbtn">Select Town</button> -->
+                    <select class="dropdown-content">
+                      <option name="CapeTown" class="dropdownSelect" value="CapeTown" selected>Cape Town</option>
+                        <option name="George" class="dropdownSelect" value="George" >George</option>
+                        <option name="Paarl" class="dropdownSelect" value="Paarl" >Paarl</option>
+                        <option name="Stellenbosch" class="dropdownSelect" value="Stellenbosch" >Stellenbosch</option>
+                      </select>
+                  </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="row ofDisplay">
+            <span class="col-6 display1" id="displayMaaan"></span>
+
+        </div>
+    </div>
+
+  </body>
+  <script src="reg_numbers.js" charset="utf-8"></script>
+  <script src="reg_numbers_dom.js" charset="utf-8"></script>
+</html>

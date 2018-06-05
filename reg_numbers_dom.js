@@ -9,18 +9,13 @@ var clearElem = document.querySelector('.clear')
 var storing = localStorage.getItem('users');
 var storedRegs = storing ? JSON.parse(storing) : {};
 
-// function regCreation(takeInAValue){
-//   var create = document.createElement('span')
-//   create.createTextNode = takeInAValue;
-//   displayElem.appendChild(create);
-//
-// }
+
 
 function listCReation() {
-  var node = document.createElement("button");
-  var textnode = document.createTextNode(textFieldElem.value);
-  node.appendChild(textnode);
-  document.getElementById("displayMaaan").appendChild(node);
+  var create = document.createElement("button");
+  var addText = document.createTextNode(textFieldElem.value);
+  create.appendChild(addText);
+  document.getElementById("displayMaaan").appendChild(create);
 }
 
 

@@ -6,7 +6,7 @@ body{
 }
 .container{
   background: white;
-  height: 1200px;
+  height: 100%;
 }
 .ofdropdown{
   text-align: center;
@@ -23,16 +23,21 @@ body{
 .dropdown-content a:hover {background-color: #ddd}
 
 
-.display1{
-  background-color: yellow;
-  border-radius: 10px;
-  border: 3px solid black;
-  width: 90%;
+li{
+  width: 50%;
   text-align: center;
+  border-radius: 15px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-top: 15px;
+  display:inline-block;
+  background-color: yellow;
+  border: 3px solid black;
 }
 .ofDisplay{
   text-align: center;
   margin-top:10%;
+
 }
 .ofDisplay{
   text-align: center;

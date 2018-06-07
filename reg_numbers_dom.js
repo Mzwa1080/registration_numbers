@@ -17,11 +17,12 @@ function listCReation(value) {
 }
 
 function displayingRegNums(){
-    var numberPlate = textFieldElem.value.trim();
+    var numberPlate = textFieldElem.value.trim().toUpperCase();
     textFieldElem.value = '';
 
     if(myRegs.inputReg(numberPlate)){
       listCReation(numberPlate)
+
     }
 
   localStorage.setItem("Registration", JSON.stringify(myRegs.returnAll()))
@@ -45,14 +46,14 @@ clearElem.addEventListener('click', function(){
 })
 
 
-dropDownElem.addEventListener('change', function(){
-  displayElem.value = '';
-  var forDropDown = myRegs.forFilter(dropDownElem.value)
-
-  if (forDropDown.length > 0) {
-    for (var i = 0; i < forDropDown.length; i++) {
-      forDropDown(dropDownElem[i])
-    }
-
-  }
-})
+// dropDownElem.addEventListener('change', function(){
+//   displayElem.value = '';
+//   var forDropDown = myRegs.forFilter(dropDownElem.value)
+//
+//   if (forDropDown.length > 0) {
+//     for (var i = 0; i < forDropDown.length; i++) {
+//       forDropDown(dropDownElem[i])
+//     }
+//
+//   }
+// })

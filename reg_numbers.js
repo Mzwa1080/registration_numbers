@@ -20,6 +20,18 @@ function RegistrationNums(storedRegs){
   }
 
 
+function forFiltering(towns){
+  var empty = '';
+  var lists = ["CA", "CAW", "CEY", "CJ"];
+
+    for(var i=0; i<towns.length; i++){
+      if(towns.startsWith(lists)){
+        empty.push(towns[i])
+      }
+    }
+    return empty;
+}
+
 
   // function forFilter(key){
   //     var carReg =  Object.keys(regNums);
@@ -61,7 +73,7 @@ function RegistrationNums(storedRegs){
   return{
     inputReg,
     returnAll,
-    // forNumbersInReg,
+    forFiltering,
     returnTyped,
     //forAdding
     // forFilter

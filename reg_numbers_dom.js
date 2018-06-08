@@ -46,14 +46,14 @@ clearElem.addEventListener('click', function(){
 })
 
 
-// dropDownElem.addEventListener('change', function(){
-//   displayElem.value = '';
-//   var forDropDown = myRegs.forFilter(dropDownElem.value)
-//
-//   if (forDropDown.length > 0) {
-//     for (var i = 0; i < forDropDown.length; i++) {
-//       forDropDown(dropDownElem[i])
-//     }
-//
-//   }
-// })
+dropDownElem.addEventListener('change', function(){
+  displayElem.value = '';
+  var forDropDown = myRegs.forFiltering(dropDownElem.value)
+
+  // if (forDropDown.length > 0) {
+  //   for (var i = 0; i < forDropDown.length; i++) {
+  //     forDropDown(dropDownElem[i])
+  //   }
+  //
+  // }
+})

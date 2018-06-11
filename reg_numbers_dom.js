@@ -1,4 +1,3 @@
-var myRegs = RegistrationNums(storedRegs)
 var textFieldElem = document.querySelector(".textInput");
 var addBtnElem = document.querySelector(".Addbtn");
 var displayElem = document.querySelector(".display1");
@@ -10,6 +9,8 @@ var dropDownElem = document.querySelector('.dropdown2')
 var storing = localStorage.getItem('Registration');
 var storedRegs = storing ? JSON.parse(storing) : {};
 
+var myRegs = RegistrationNums(storedRegs)
+
 function listCReation(value) {
   let create = document.createElement("li");
   create.textContent = value;
@@ -17,43 +18,47 @@ function listCReation(value) {
 }
 
 function displayingRegNums(){
-    var numberPlate = textFieldElem.value.trim().toUpperCase();
+    var numberPlate = textFieldElem.value.trim();
     textFieldElem.value = '';
 
     if(myRegs.inputReg(numberPlate)){
-      listCReation(numberPlate)
-
+      listCReation(myRegs.forRegNumber())
+      localStorage.setItem("Registration", JSON.stringify(myRegs.forRegMap()))
     }
-
-  localStorage.setItem("Registration", JSON.stringify(myRegs.returnAll()))
-
+      else {
+      displayElem.innerHTML = "Please enter a valid registration number!"
+    }
 }
 
 
 addBtnElem.addEventListener('click', function(){
-  console.log();
   displayingRegNums();
-  //listCReation()
 })
 
 clearElem.addEventListener('click', function(){
-  if(textFieldElem !== ""){
-    textFieldElem.value = "";
-  }
   displayElem.innerHTML = '';
   localStorage.clear();
   location.reload()
+  location.hash = "";
+  dropDownElem.value = "All"
 })
 
+window.addEventListener("load", function() {
+  var list = myRegs.forFiltering("");
+  if (location.hash !== "") {
+    for (let i = 0; i < list.length; i++) {
+      listCReation(list[i]);
+    }
+  }
+});
 
 dropDownElem.addEventListener('change', function(){
-  displayElem.value = '';
-  var forDropDown = myRegs.forFiltering(dropDownElem.value)
+    let getData = myRegs.forFiltering(dropDownElem.value);
+  
+    displayElem.innerHTML = '';
 
-  // if (forDropDown.length > 0) {
-  //   for (var i = 0; i < forDropDown.length; i++) {
-  //     forDropDown(dropDownElem[i])
-  //   }
-  //
-  // }
+      for(var i=0; i< getData.length; i++){
+        listCReation(getData[i]);
+      }
+
 })

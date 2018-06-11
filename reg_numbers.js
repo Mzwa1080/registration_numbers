@@ -1,81 +1,58 @@
 function RegistrationNums(storedRegs){
-  var allRegs = storedRegs || {};
+  var allRegs =storedRegs ||{};
   var regNums = '';
   //var regNum = '';
 
+  // if (storedRegs) {
+  //   for (var i = 0; i < storedRegs.length; i++){
+  //     var check = storedRegs[i];
+  //     allRegs[check] = 0;
+  //   }
+  // }
+
   function inputReg(regNumber){
-    if(regNumber !==''){
-        regNums = regNumber;
-        if(allRegs[regNumber] == undefined){
-           for(var i =0; i<regNumber.length; i++){
+        if(allRegs[regNumber] === undefined){
+           // for(var i =0; i<regNumber.length; i++){
              if(regNumber.startsWith('CA') || regNumber.startsWith('CAW') || regNumber.startsWith('CEY') || regNumber.startsWith('CJ'))
-              allRegs[regNumber] == 0
+              regNums = regNumber;
+              allRegs[regNumber] = 0;
+               //console.log(regNums);
+              return true;
           }
-        }
-        return true;
-    }
-    else {
-      return false;
-    }
+          return false;
+        // }
+
   }
 
-
-function forFiltering(towns){
-  var empty = '';
-  var lists = ["CA", "CAW", "CEY", "CJ"];
-
-    for(var i=0; i<towns.length; i++){
-      if(towns.startsWith(lists)){
-        empty.push(towns[i])
-      }
-    }
-    return empty;
-}
-
-
-  // function forFilter(key){
-  //     var carReg =  Object.keys(regNums);
-  //
-  //     if(key === "All"){
-  //         return carReg;
-  //     }
-  //
-  //     if(key == "filter"){
-  //       var empty = carReg.clear();
-  //         return empty;
-  //     }
-  //
-  //
-  //     var townFiltering = carReg.filter(function(Number,anyNumber){
-  //       return Number.startsWith(key)
-  //     })
-  //
-  //     // var townFiltering = carReg.filter(function(Num, anyNumber){
-  //     //   return Num.startsWith(key)
-  //     // )};
-  //
-  //     location.hash = key;
-  //     return townFiltering;
-  //
-  // }
-  function returnAll(){
+  function forRegMap(){
     return allRegs;
   }
 
-  // function forNumbersInReg(){
-  //   return personReg;
+  function forRegNumber(){
+    return regNums;
+  }
+
+  // function returnAll(){
+  //   return allRegs;
   // }
 
-  function returnTyped(){
-    return Object.keys(regNums).length;
+  function forFiltering(selectedTown){
+    var registrations = Object.keys(allRegs);
+    if (selectedTown !== "All") {
+
+      var newVar =  registrations.filter(current => current.startsWith(selectedTown));
+
+        return newVar ;
+    }
+      return registrations;
+
   }
 
   return{
     inputReg,
-    returnAll,
-    forFiltering,
-    returnTyped,
-    //forAdding
-    // forFilter
+    forRegNumber,
+    forRegMap,
+    // returnAll,
+    forFiltering
   }
 }

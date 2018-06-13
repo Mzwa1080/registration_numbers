@@ -29,7 +29,6 @@ function addRegistration() {
     return;
   }
   alert.innerHTML = "Please enter a valid registration number!";
-  displayElem.innerHTML = '';
 }
 
 addBtnElem.addEventListener('click', addRegistration)

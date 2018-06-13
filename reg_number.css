@@ -31,10 +31,10 @@ body{
 
 
 li{
-  width: 50%;
+  width: 15%;
   text-align: center;
   border-radius: 15px;
-  padding: 10px;
+  padding: ;
   margin-left: 5px;
   margin-top: 15px;
   display:inline-block;
@@ -42,10 +42,7 @@ li{
   border: 3px solid black;
 }
 .ofDisplay{
-  text-align: center;
+  text-align: left;
   margin-top:10%;
 
-}
-.ofDisplay{
-  text-align: center;
 }

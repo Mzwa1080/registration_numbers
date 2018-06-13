@@ -19,6 +19,13 @@ body{
     display: inline-block;
 
 }
+.dropdownSelect{
+  text-align: center;
+}
+.alert{
+  color: crimson;
+  text-align: center;
+}
 
 .dropdown-content a:hover {background-color: #ddd}
 
